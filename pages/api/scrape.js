@@ -47,7 +47,7 @@ export default async function handler(req, res) {
       averagePrice: average,
       marketPrice,
       resalePrice,
-      itemCount: prices.length
+      itemCount: prices.length, priceList: prices
     });
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch eBay data', details: err.message });
