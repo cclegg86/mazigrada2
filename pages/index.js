@@ -21,6 +21,7 @@ export default function WatchPricer() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Unknown error");
       setResult(data);
+      setPricesForChart(data.priceList || []);
     } catch (err) {
       setError(err.message);
     } finally {
