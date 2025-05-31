@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     });
 
     const $ = cheerio.load(html);
-    const prices: number[] = [];
+    const prices = [];
 
     $('li.s-item').each((_, el) => {
       const priceText = $(el).find('.s-item__price').first().text();
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
       resalePrice,
       itemCount: prices.length
     });
-  } catch (err: any) {
+  } catch (err) {
     res.status(500).json({ error: 'Failed to fetch eBay data', details: err.message });
   }
 }
