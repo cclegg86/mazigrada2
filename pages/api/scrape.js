@@ -3,7 +3,7 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-const EBAY_SEARCH_URL = (query: string) =>
+const EBAY_SEARCH_URL = (query) =>
   `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(
     query
   )}&LH_Sold=1&LH_Complete=1`;
